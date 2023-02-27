@@ -15,7 +15,7 @@
 const { Sequelize } = require('sequelize');
 
 const db = new Sequelize('dbbank', 'root', '', {
-  host: 'localhost',
+  host: process.env.HOST,
   dialect: 'mysql',
   logging: false,
 });
