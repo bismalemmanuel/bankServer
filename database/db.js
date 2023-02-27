@@ -14,10 +14,15 @@
 
 const { Sequelize } = require('sequelize');
 
-const db = new Sequelize('dbbank', 'root', '', {
-  host: process.env.HOST,
-  dialect: 'mysql',
-  logging: false,
-});
+const db = new Sequelize(
+  process.env.DATABASE,
+  process.env.DB_USERNAME,
+  process.env.DB_PASSWORD,
+  {
+    host: process.env.HOST,
+    dialect: process.env.DB_DIALECT,
+    logging: false,
+  }
+);
 
 module.exports = { db };
